@@ -1,0 +1,12 @@
+TOKEN "cicd_friday_endpoint_endpoint_read_9958" READ
+
+NODE cicd_friday_endpoint_0
+SQL >
+
+    SELECT
+        toStartOfHour(tpep_pickup_datetime) AS hour,
+        avg(passenger_count) AS passengers
+    FROM taxi
+    GROUP BY hour
+
+

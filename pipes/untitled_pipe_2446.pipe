@@ -1,0 +1,6 @@
+NODE untitled_pipe_2446_0
+SQL >
+
+    SELECT count() FROM taxi_pipe_9368_0_mv
+
+
