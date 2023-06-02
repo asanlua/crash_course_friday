@@ -1,0 +1,7 @@
+NODE untitled_pipe_0724_0
+SQL >
+
+    SELECT * FROM tinybird.pipe_stats_rt
+    order by read_bytes desc
+
+

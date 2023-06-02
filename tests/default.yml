@@ -1,0 +1,6 @@
+- no_negative_passengers:
+    max_bytes_read: null
+    max_time: null
+    sql: |
+        SELECT * FROM cicd_friday_endpoint
+        where passengers < 0    
