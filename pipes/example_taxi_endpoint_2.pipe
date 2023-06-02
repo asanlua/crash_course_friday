@@ -1,0 +1,33 @@
+TOKEN "example_taxi_endpoint_endpoint_read_9086" READ
+
+NODE taxi_pipe_2903_0
+SQL >
+
+    SELECT avg(passenger_count)  FROM taxi
+
+
+
+NODE example_taxi_endpoint_2_1
+SQL >
+
+    SELECT vendorid from 
+    taxi
+    where toDate(tpep_pickup_datetime) = '2002-12-31'
+
+
+
+NODE example_taxi_endpoint_2_2
+SQL >
+
+    SELECT
+    now(),
+    toDate(now()),
+    toDateTime(now()),
+    toDateTime64(now(),3),
+    now64(),
+    toDateTime64(now64(),3),
+    toUnixTimestamp64Milli(toDateTime64(now64(),3)),
+    today(),
+    yesterday()
+
+

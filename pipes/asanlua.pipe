@@ -1,0 +1,33 @@
+TOKEN "asanlua_endpoint_read_6136" READ
+
+NODE asanlua_0
+SQL >
+
+    SELECT count() FROM taxi_passenger
+    where passenger_count = 3
+
+
+
+NODE asanlua_1
+SQL >
+
+    SELECT count() FROM taxi_vendorid
+    where passenger_count = 3
+
+
+
+NODE asanlua_2
+SQL >
+
+    SELECT count() FROM taxi_vendorid
+    where vendorid = 2
+
+
+
+NODE asanlua_3
+SQL >
+
+    SELECT count() FROM taxi_passenger
+    where vendorid = 2
+
+

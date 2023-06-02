@@ -1,0 +1,8 @@
+TOKEN "untitled_pipe_1987_endpoint_read_1754" READ
+
+NODE untitled_pipe_1987_0
+SQL >
+
+    SELECT * FROM taxi limit 10
+
+

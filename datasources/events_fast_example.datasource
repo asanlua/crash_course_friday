@@ -1,0 +1,11 @@
+
+SCHEMA >
+    `age` Int16 `json:$.age`,
+    `email` String `json:$.email`,
+    `name` String `json:$.name`,
+    `timestamp` DateTime64(3) `json:$.timestamp`,
+    `transaction_id` String `json:$.transaction_id`
+
+ENGINE "MergeTree"
+ENGINE_PARTITION_KEY "toYear(timestamp)"
+ENGINE_SORTING_KEY "timestamp, email, name, transaction_id"

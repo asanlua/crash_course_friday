@@ -1,0 +1,6 @@
+TOKEN "example_taxi_endpoint_endpoint_read_9086" READ
+
+NODE taxi_pipe_2903_0
+SQL >
+
+    SELECT avg(passenger_count)  FROM taxi

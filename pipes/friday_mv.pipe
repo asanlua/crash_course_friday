@@ -1,0 +1,17 @@
+VERSION 1
+
+NODE taxi_pipe_9368_0
+SQL >
+
+    SELECT
+        toStartOfDay(tpep_pickup_datetime) AS day,
+        avgState(passenger_count) AS passengers
+    FROM taxi
+    GROUP BY day
+
+TYPE materialized
+DATASOURCE taxi_pipe_9368_0_mv
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYYYYMM(day)"
+ENGINE_SORTING_KEY "day"
+

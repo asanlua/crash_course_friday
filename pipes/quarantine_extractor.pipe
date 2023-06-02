@@ -1,0 +1,15 @@
+TOKEN "quarantine_extractor_endpoint_read_1577" READ
+
+NODE quarantine_extractor_0
+SQL >
+
+    SELECT * except(c__error_column, c__error,c__import_id, age) from events_fast_example_quarantine
+
+
+
+NODE quarantine_extractor_1
+SQL >
+
+    SELECT 42 as age, * FROM quarantine_extractor_0
+
+

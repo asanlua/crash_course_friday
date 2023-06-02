@@ -1,0 +1,32 @@
+TOKEN "taxi_pipe_7533_endpoint_read_6659" READ
+
+TOKEN "example_taxi_endpoint_endpoint_read_9086" READ
+
+NODE taxi_pipe_7533_0
+SQL >
+
+    SELECT toStartOfHour(tpep_pickup_datetime) as time, sum(passenger_count) as passengers FROM taxi
+    group by time
+
+
+
+NODE distance_per_minute
+SQL >
+
+    %
+    SELECT toStartOfMinute(tpep_pickup_datetime) as minute, avg(trip_distance) average_distance
+    FROM taxi
+    {% if defined(passengers) %}
+    WHERE passenger_count={{Int16(passengers, 2)}}
+    {% end %}
+    group by minute
+
+
+
+NODE taxi_pipe_7533_2
+SQL >
+
+    SELECT * FROM distance_per_minute
+    where average_distance > 4
+
+

@@ -1,0 +1,15 @@
+NODE taxi_pipe_5021_0
+SQL >
+
+    SELECT
+        toStartOfHour(tpep_pickup_datetime) AS time,
+        sumSimpleState(passenger_count) AS passengers
+    FROM taxi
+    GROUP BY time
+
+TYPE materialized
+DATASOURCE taxi_pipe_5021_0_mv
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYYYYMM(time)"
+ENGINE_SORTING_KEY "time"
+

@@ -1,0 +1,10 @@
+TOKEN "taxi_pipe_9368_0_mv_pipe_2335_endpoint_read_3794" READ
+
+NODE taxi_pipe_9368_0_mv_pipe_2335_0
+SQL >
+
+    SELECT hour, avgMerge(passengers) as passengers
+    FROM taxi_pipe_9368_0_mv
+    group by hour
+
+

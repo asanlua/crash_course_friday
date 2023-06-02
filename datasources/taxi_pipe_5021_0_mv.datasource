@@ -1,0 +1,9 @@
+# Data Source created from Pipe 'mv_pipe'
+
+SCHEMA >
+    `time` DateTime,
+    `passengers` SimpleAggregateFunction(sum, Int64)
+
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYYYYMM(time)"
+ENGINE_SORTING_KEY "time"

@@ -1,0 +1,18 @@
+NODE taxi_pipe_7106_0_mv_pipe_9004_0
+SQL >
+
+    SELECT time, avgMerge(avg_distance) FROM taxi_pipe_7106_0_mv
+    group by time
+
+
+
+NODE taxi_pipe_7106_0_mv_pipe_9004_1
+SQL >
+
+    SELECT
+        toStartOfHour(tpep_pickup_datetime) AS time,
+        avg(trip_distance) AS avg_distance
+    FROM taxi
+    GROUP BY time
+
+

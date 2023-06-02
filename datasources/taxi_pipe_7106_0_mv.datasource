@@ -1,0 +1,9 @@
+# Data Source created from Pipe 'taxi_state_mv'
+
+SCHEMA >
+    `time` DateTime,
+    `avg_distance` AggregateFunction(avg, Float32)
+
+ENGINE "AggregatingMergeTree"
+ENGINE_PARTITION_KEY "toYYYYMM(time)"
+ENGINE_SORTING_KEY "time"

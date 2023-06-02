@@ -1,0 +1,6 @@
+NODE taxi_pipe_5021_0_mv_pipe_3081_0
+SQL >
+
+    SELECT * FROM taxi_pipe_5021_0_mv
+
+
